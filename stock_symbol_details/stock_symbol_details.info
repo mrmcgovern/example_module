@@ -1,0 +1,10 @@
+name = Stock Symbol Details
+description = This module uses menu hooks to create a page which displays the js application for symbol details.
+core = 7.x
+version = 7.x-0.1
+package = Stocks
+; Dependencies
+dependencies[] = search_api
+dependencies[] = stock_symbol_search
+; Files
+; file[] = includes/site_structure.company_services.inc

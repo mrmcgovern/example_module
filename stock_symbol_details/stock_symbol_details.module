@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * This is .module file contains hooks for search_api module.
+ *
+ * This module uses search API hooks to modify user input, automatically adding
+ * wildcards to search terms which will allow for partial word search.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function stock_symbol_details_menu() {
+  $items['symbol/details'] = array(
+    'title' => 'Symbol Detail',
+    'page callback' => 'stock_symbol_details_page_main',
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM
+  );
+  return $items;
+}
+
+function stock_symbol_details_page_main() {
+  return theme('stock_symbol_details_template');
+}
+
+/*
+ * Implement hook_theme().
+ */
+
+function stock_symbol_details_theme() {
+  return array(
+    'stock_symbol_details_template' => array(
+      'template' => 'templates/symbol-details-page',
+    ),
+  );
+}
